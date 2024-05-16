@@ -1,0 +1,83 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Credit Card Validation</title>
+   <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   <div class="card-container">
+       <form class="card-form">
+           <label for="card-type">Card Type:</label>
+           <select id="card-type" name="card-type">
+               <option value="american-express">American Express</option>
+               <option value="master-card">Master Card</option>
+               <option value="visa">VISA</option>
+               <option value="discover">Discover</option>
+               <option value="diners-club">Diners Club</option>
+           </select>
+
+           <label for="card-number">Card Number:</label>
+           <input type="text" id="card-number" name="card-number">
+
+           <button type="submit">Validate</button>
+       </form>
+   </div>
+
+   <script src="script.js"></script>
+</body>
+</html>
+
+<Script>
+const form = document.querySelector('.card-form');
+
+form.addEventListener('submit', (event) => {
+   event.preventDefault();
+
+   const cardType = form.elements.card-type.value;
+   const cardNumber = form.elements.card-number.value;
+
+   // Validate American Express
+   if (cardType === 'american-express' && isAmericanExpress(cardNumber)) {
+       alert('Valid American Express card');
+   } else {
+       alert('Invalid American Express card');
+   }
+
+   // Validate Master Card
+   if (cardType === 'master-card' && isMasterCard(cardNumber)) {
+       alert('Valid Master Card');
+   } else {
+       alert('Invalid Master Card');
+   }
+
+   // Validate VISA
+   if (cardType === 'visa' && isVISA(cardNumber)) {
+       alert('Valid VISA card');
+   } else {
+       alert('Invalid VISA card');
+   }
+
+   // Validate Discover
+   if (cardType === 'discover' && isDiscover(cardNumber)) {
+       alert('Valid Discover card');
+   } else {
+       alert('Invalid Discover card');
+   }
+
+   // Validate Diners Club
+   if (cardType === 'diners-club' && isDinersClub(cardNumber)) {
+       alert('Valid Diners Club card');
+   } else {
+       alert('Invalid Diners Club card');
+   }
+});
+
+function isAmericanExpress(cardNumber) {
+   return /^3[47][0-9]{13}$/.test(cardNumber);
+}
+
+</script>

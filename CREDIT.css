@@ -1,0 +1,43 @@
+CSS (styles.css):
+css
+body {
+   font-family: Arial, sans-serif;
+}
+
+.card-container {
+   width: 300px;
+   margin: 0 auto;
+   padding: 20px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+}
+
+.card-form {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+}
+
+.card-form label {
+   margin-bottom: 5px;
+}
+
+.card-form input {
+   padding: 10px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+}
+
+.card-form button {
+   padding: 10px;
+   background-color: #4CAF5;
+   color: white;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+}
+
+.card-form button:hover {
+   background-color: #333;
+}
+
